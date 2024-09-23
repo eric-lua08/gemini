@@ -4,8 +4,10 @@
 # 临时文件
 *.log
 *.tmp
+.temp
 *.swp
 *.swo
+.swc
 
 # 虚拟环境
 venv
@@ -14,3 +16,6 @@ node_modules
 # 编辑器配置
 .idea
 .vscode
+
+# build
+dist
