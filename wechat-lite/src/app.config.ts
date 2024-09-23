@@ -12,7 +12,8 @@ export default defineAppConfig({
     {
       root: 'pages/github',
       pages: [
-        'app-2fa/app-2fa'
+        'app-2fa/app-2fa',
+        'add-2fa/add-2fa'
       ]
     }
   ]

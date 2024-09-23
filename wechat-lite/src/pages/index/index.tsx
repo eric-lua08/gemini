@@ -1,6 +1,8 @@
 import { View, Text, Navigator } from '@tarojs/components'
 import { useLoad } from '@tarojs/taro'
 import './index.less'
+import { AppList } from '@/components/app-list'
+import { SubPageWarpper } from '@/components/warppers'
 
 export default function Index() {
   useLoad(() => {
@@ -8,22 +10,8 @@ export default function Index() {
   })
 
   return (
-    <View className='app-list'>
-      <View className='app-list-item'>
-        <Navigator url='/pages/github/app-2fa/app-2fa'>app-2fa</Navigator>
-      </View>
-      <View className='app-list-item'>
-        <Navigator url='/pages/github/app-2fa/app-2fa'>app-2fa</Navigator>
-      </View>
-      <View className='app-list-item'>
-        <Navigator url='/pages/github/app-2fa/app-2fa'>app-2fa</Navigator>
-      </View>
-      <View className='app-list-item'>
-        <Navigator url='/pages/github/app-2fa/app-2fa'>app-2fa</Navigator>
-      </View>
-      <View className='app-list-item'>
-        <Navigator url='/pages/github/app-2fa/app-2fa'>app-2fa</Navigator>
-      </View>
-    </View>
+    <SubPageWarpper  >
+      <AppList />
+    </SubPageWarpper>
   )
 }

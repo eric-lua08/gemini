@@ -1,4 +1,4 @@
-import { View } from "@tarojs/components"
+import { ScrollView, View } from "@tarojs/components"
 import React, { ForwardedRef } from "react"
 import './sub-page.less';
 
@@ -17,7 +17,7 @@ export interface SubPageWarpperInstance {
 export const SubPageWarpper = React.forwardRef(({ children, style = {}, className = '', ignoreWrapper = false }: SubPageWarpperProps, ref: ForwardedRef<SubPageWarpperInstance>) => {
   return ignoreWrapper
     ? children
-    : <View style={{ ...style }} className={`${className} __sub-page-wrapper`}>
+    : <ScrollView  scroll-y style={{ ...style }} className={`${className} __sub-page-wrapper`}>
       {children}
-    </View>
+    </ScrollView>
 })

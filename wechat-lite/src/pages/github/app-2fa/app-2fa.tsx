@@ -40,7 +40,7 @@ export default function App2fa() {
     return JSON.parse(storage);
   }, [storage]);
 
-  const handleAddApp = async () => {
+  const handleScanAppQr = async () => {
     console.log('add app');
     // @ts-ignore
     const [err, res] = await Taro.scanCode({ scanType: ['qrCode'] })[Symbol.result]();
@@ -63,6 +63,11 @@ export default function App2fa() {
     if (existIdx > -1) tmp.splice(existIdx, 1);
 
     setStorage(JSON.stringify([account, ...tmp]));
+  }
+
+  const [showAddApp, setShowAddApp] = useState(false);
+  const handleAddApp = () => {
+    Taro.navigateTo({ url: '/pages/github/add-2fa/add-2fa' })
   }
 
   const showApp2faOtp = (app: IOtpauth) => {
@@ -131,7 +136,8 @@ export default function App2fa() {
 
       <ListItem>asdadasdas</ListItem>
 
-      <Ufo style={{ bottom: 60 }} onClick={handleAddApp}>+</Ufo>
+      <Ufo style={{ bottom: 120 }} onClick={handleAddApp}>F</Ufo>
+      <Ufo style={{ bottom: 60 }} onClick={handleScanAppQr}>+</Ufo>
     </SubPageWarpper>
   )
 }
